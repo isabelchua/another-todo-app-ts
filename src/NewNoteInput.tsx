@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { ChangeEvent } from "react";
 
 interface NewNoteInputProps {
 	addNote(note: string): void;
 }
 
-const NewNoteInput: React.FC<NewNoteInputProps> = ({ addNote } = () => {
+export const NewNoteInput: React.FC<NewNoteInputProps> = ({ addNote }) => {
 	const [note, setNote] = React.useState("");
 
 	const updateNote = (event: ChangeEvent<HTMLInputElement>) => {
@@ -12,7 +12,7 @@ const NewNoteInput: React.FC<NewNoteInputProps> = ({ addNote } = () => {
 	};
 
 	const onAddNoteClick = () => {
-		AddNote(note);
+		addNote(note);
 		setNote("");
 	};
 
@@ -20,14 +20,12 @@ const NewNoteInput: React.FC<NewNoteInputProps> = ({ addNote } = () => {
 		<div>
 			<input
 				onChange={updateNote}
-				type="text"
 				value={note}
+				type="text"
 				name="note"
-				id=""
+				placeholder="Note"
 			/>
 			<button onClick={onAddNoteClick}>Add note</button>
 		</div>
 	);
-});
-
-export default NewNoteInput;
+};

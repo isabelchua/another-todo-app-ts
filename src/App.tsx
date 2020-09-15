@@ -1,12 +1,12 @@
 import React from "react";
-import NewNoteInput from "./NewNoteInput";
+import { NewNoteInput } from "./NewNoteInput";
 
 import "./App.css";
 
 function App() {
 	return (
 		<>
-			<NewNoteInput />
+			<NewNoteInput addNote={alert} />
 			<ul>
 				<li>some note</li>
 			</ul>
