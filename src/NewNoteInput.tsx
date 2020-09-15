@@ -4,7 +4,8 @@ interface NewNoteInputProps {
 	addNote(note: string): void;
 }
 
-export const NewNoteInput: React.FC<NewNoteInputProps> = ({ addNote }) => {
+// export const NewNoteInput: React.FC<NewNoteInputProps> = ({ addNote }) => {
+export const NewNoteInput = ({ addNote }: NewNoteInputProps) => {
 	const [note, setNote] = React.useState("");
 
 	const updateNote = (event: ChangeEvent<HTMLInputElement>) => {
